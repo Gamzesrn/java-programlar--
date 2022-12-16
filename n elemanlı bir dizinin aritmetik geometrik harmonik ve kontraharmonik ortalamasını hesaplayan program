@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class homework2 {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int ao,go,ho,toplam=0,htoplam=0,gcarpim=1;
+        double khtoplam=0,kho;
+        System.out.println("lutfen bir n degeri giriniz");
+        int n = input.nextInt();
+        int[]A=new int [n] ;
+        for (int i = 0; i < n; i++) {
+            System.out.println((i+1)+".  A degerini giriniz");
+            A[i]=input.nextInt();
+        }
+        for (int i = 0; i < A.length; i++) { 
+            toplam+=A[i];
+            gcarpim*=A[i];
+            htoplam+=1/A[i];
+            khtoplam = khtoplam+ Math.pow(A[i], 2);
+        }  
+        ao=toplam/n;
+        go=gcarpim^(1/n);
+        ho=n/htoplam;
+        kho=khtoplam/toplam;
+        System.out.println("aritmetik ortalama= "+ao+" harmonik ortalama= "+ ho+" geometrik ortalama= "+go+" kontraharmonik ortalama= "+kho);
+    }
+}
