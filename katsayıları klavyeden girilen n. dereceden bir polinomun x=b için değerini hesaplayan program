@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class homework3 {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("lutfen x degerini iriniz");
+        int x=input.nextInt();
+        System.out.println("lutfen derece giriniz");
+        int n=input.nextInt();
+        int toplam=0;
+        int[]a=new int [n] ;
+        for (int i = 0; i <n; i++) {              
+            System.out.println((i+1)+".  a degerini giriniz");
+             a[i]=input.nextInt();
+        }
+        
+        for (int i = 0; i < n; i++) {
+            toplam+=a[i]*Math.pow(x, (i));
+        }
+        System.out.println("toplam= "+toplam);
+    }
+}
