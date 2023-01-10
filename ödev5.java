@@ -1,24 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Lenovo
- */
 import java.util.Scanner;
 public class ödev5 {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        
-        
-        
+        Scanner input= new Scanner (System.in);
+        System.out.println("bir sayı giriniz");
+        int n = input.nextInt();
+        int[][]A=new int[n][n];
+        int []B=new int[n];
+        System.out.println("a matrisi");
+        for (int i = 0; i <n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print("a matrisinin "+i+". satırı "+j+".sütunu ");
+                A[i][j]=input.nextInt();
+            }
+        }
+        for (int i = 0; i <n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(A[i][j]+" ");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                B[i]+=A[i][j];
+            }
+        }
+        System.out.println("b dizisi");
+        for (int i = 0; i <n; i++) {
+            System.out.print(B[i]+" ");
+        }
+        System.out.println();
     }
-    
 }

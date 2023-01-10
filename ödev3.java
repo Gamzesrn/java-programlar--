@@ -1,45 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Lenovo
- */
 import java.util.Scanner;
 public class ödev3 {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Scanner input=new Scanner(System.in);
-        System.out.println("lütfen kenar1 giriniz");
-        int kenar1=input.nextInt();
-        System.out.println("lütfen kenar2 giriniz");
-        int kenar2=input.nextInt();
-        System.out.println("lütfen kenar3 giriniz");
-        int kenar3=input.nextInt();
-        if(kenar1==kenar2&&kenar1==kenar3){
-          System.out.println("eşkenar üçgendir");
+        Scanner input = new Scanner(System.in);
+        System.out.println("bir n değeri giriniz");
+        int n = input.nextInt();
+        int[][]A=new int[n][n];
+        int t=0;
+        System.out.println("a matrisi");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <n; j++) {
+                System.out.print("A matrisinin"+ i+".satırı "+j+".sütunu ");
+                A[i][j]=input.nextInt();
+            }
         }
-        else if(kenar1==kenar2&& kenar1!=kenar3){
-            System.out.println("ikizkenar üçgendir");
-        }
-        else if (kenar2==kenar3&& kenar2!=kenar1){
-            System.out.println("ikizkenar üçgendir");
-        }
-        else if (kenar3==kenar1&& kenar3!=kenar2){
-            System.out.println("ikizkenar üçgendir");
-        }
-        else if(kenar1!=kenar2&& kenar1!=kenar3){
-            System.out.println("çeşitkenar üçgendir");
-        }
-        
-        
+         for (int i = 0; i < n; i++) {
+            for (int j = 0; j <n; j++) {
+                System.out.print(A[i][j]+" ");
+            }
+             System.out.println();
+         }
+         for (int i = 0; i <n; i++) {
+             for (int j = 0; j <n; j++) {
+                 if(i==(n-2)&&j!=(n-1)||j==(n-2)&&i!=(n-1)){
+                     t+=A[i][j];
+                 }
+                 if(i==(n-2)&&j==(n-2)){
+                     t+=A[i][j];
+                 }
+             }
+         }
+         System.out.println("toplam= "+t);    
     }
-    
 }

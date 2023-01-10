@@ -1,53 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Lenovo
- */
 import java.util.Scanner;
 public class ödev2 {
-
-    /**
-     * @param args the command line arguments
-     */
-    
     public static void main(String[] args) {
-        // TODO code application logic here
-        Scanner input = new Scanner (System.in);
-        System.out.println("Lütfen 1-7 arasında bir sayı giriniz");
-        int sayi = input.nextInt();
-        if(sayi==1){
-        System.out.println("pazartesi");
+        Scanner input=new Scanner(System.in);
+        System.out.println("Bir n değeri giriniz");
+        int n =input.nextInt();
+        int[][]A=new int[n][n];
+        int[][]B=new int[n][n];
+        System.out.println("a matrisi");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.println("a matrisinin "+i+". satırı "+j+". sütunu ");
+                A[i][j]=input.nextInt();
+            }
         }
-        if(sayi==2){
-        System.out.println("salı");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(A[i][j]+" ");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <n; j++) {
+                if(i<=j){
+                   B[i][j]=A[i][j];
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <n; j++) {
+                System.out.print(B[i][j]+" ");
+            }
+            System.out.println();
+        }
         
     }
-       else if(sayi==3){
-        System.out.println("Çarşamba");
-        
-    }
-        else if(sayi==4){
-        System.out.println("perşembe");
-        
-    }
-        else  if(sayi==5){
-        System.out.println("cuma");
-        
-    }
-          else if(sayi==6){
-        System.out.println("cumartesi");
-        
-    }
-          else if (sayi == 7){
-        System.out.println("pazar");
-        
-    }
-        
-    }
-    
 }
